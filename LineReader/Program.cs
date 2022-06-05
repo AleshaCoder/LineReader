@@ -28,12 +28,12 @@ namespace LineReader
 
         private static void ShowTimeFromStart(string str = "")
         {
-            Console.WriteLine($"{str} {_stopwatch.ElapsedMilliseconds}ms");
+            Console.WriteLine($"{str} {_stopwatch.ElapsedMilliseconds/2}ms");
         }
 
         static void Main(string[] args)
         {
-            for (int i = 1; i < 9; i++)
+            for (int i = 1; i < 8; i++)
             {
                 _line = new Line();
                 StartTime();
@@ -53,6 +53,7 @@ namespace LineReader
                 ShowTime("Points found with SixLabors for");
                 _line.DrawOnImage(exImage2);
                 ShowTime("Line drawn for");
+                _line.DrawOnImage(exImage);
                 exImage.SaveAsPNG($"C:/Users/Алёша/Downloads/pixelImage{i}.png");
                 ShowTime("Saved to png for");
                 exImage2.SaveAsPNG($"C:/Users/Алёша/Downloads/imageWithLine{i}.png");
